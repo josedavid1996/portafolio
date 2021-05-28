@@ -18,13 +18,18 @@
   background: var(--fondo-primario);
 }
 header {
-  height: 50px;
+  height: 60px;
   width: 100%;
   background-color: var(--fondo-secundario);
   display: flex;
 }
 .logo {
   width: 80%;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0 0 20px;
 }
 .lista {
   width: 80%;
