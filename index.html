@@ -25,8 +25,8 @@
     </header>
     <div class="container__presentacion">
       <div class="presentacion">
-        <h1>Jose David Redondo Perdomo</h1>
-        <h3>Programador Junior</h3>
+        <h1 class= "presentacion__title">Jose David Redondo Perdomo</h1>
+        <h3 class= "presentacion__sub-title">Programador Junior</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab doloremque voluptate consequuntur corporis molestiae.
           Quas quidem praesentium cumque minus eum?</p>
             <img src="imagenes/imagen-principal.svg" alt="">
@@ -44,10 +44,10 @@
         <div class="burbuja"></div>
         <div class="burbuja"></div>
       </div>
-  </section>
+    </section>
   <section class="skills">
-    <h2 class="title__skills">Mis habilidades</h2>
-    <div class="groups__skills">
+    <h2 class="title__skills">Mis habilidades</h2>  
+    <!-- <div class="groups__skills">
       <img src="imagenes/javascript.svg" alt="">
       <img src="imagenes/html.svg" alt="">
       <img src="imagenes/css.svg" alt="">
@@ -56,6 +56,9 @@
       <img src="imagenes/figma.svg" alt="">
       <img src="imagenes/mysql.svg" alt="">
       <img src="imagenes/sass.svg" alt="">
+    </div> -->
+    <div class="fondo__skills">
+
     </div>
   </section>
   <section class="proyectos">
@@ -65,20 +68,45 @@
         <img src="imagenes/cda.png" alt="">
         <h4 class="cda__title">CDA VERIFYCAR</h4>
         <p class="cda__parrafo">Es un proyecto que le tengo mucho cariño por que fue mi primer cliente y mi primera pagina profesional </p>
+        <a href="https://cdaverifycarsaravena.com/" class="btn">Ver <i class="fas fa-eye"></i></a>
       </div>
       <div class="cda">
-        <img src="imagenes/cda.png" alt="">
-        <h4 class="cda__title">CDA VERIFYCAR</h4>
-        <p class="cda__parrafo">Es un proyecto que le tengo mucho cariño por que fue mi primer cliente y mi primera pagina
-          profesional </p>
+        <img src="imagenes/poo.png" alt="">
+        <h4 class="cda__title">PRACTICA POO</h4>
+        <p class="cda__parrafo">Proyecto donde pongo en practica el paradigma de orientacion a objetos y tambien practico el manejo del DOM </p>
+          <a href="https://josedavid1996.github.io/mi-resultado-de-poo/" class="btn">Ver <i class="fas fa-eye"></i></a>
       </div>
       <div class="cda">
-        <img src="imagenes/cda.png" alt="">
-        <h4 class="cda__title">CDA VERIFYCAR</h4>
-        <p class="cda__parrafo">Es un proyecto que le tengo mucho cariño por que fue mi primer cliente y mi primera pagina
-          profesional </p>
+        <img src="imagenes/formulario.png" alt="">
+        <h4 class="cda__title">Formulario</h4>
+        <p class="cda__parrafo">Soy un apasionado por la maquetacion y con este proyecto puede aprovechar mis conocimientos de HTML ,CSS Y JS </p>
+          <a href="https://josedavid1996.github.io/Registration-Form-Using/" class="btn">Ver <i class="fas fa-eye"></i></a>
       </div>
     </div>
   </section>
+  <!---------------------------- formulario -->
+  <section class="formulario" id="contacto">
+    <h2>Contactenos</h2>
+    <div class="campos">
+      <input type="text" placeholder="Nombre">
+      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Ciudad">
+      <input type="text" placeholder="Telefono">
+    </div>
+    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+    <input type="submit" value="Enviar" class="boton">
+    </form>
+  </section>
+  <footer>
+    <span><i class="fas fa-map-marker-alt"></i>
+      <h5>Calle 20 # 11-38 Saravena - Arauca</h5>
+    </span>
+    <span><i class="fas fa-phone-alt"></i>
+      <h5>+57 3186625938</h5>
+    </span>
+    <span><i class="fas fa-envelope-open"></i>
+      <h5>redondoperdomojosedavid@gmail.com</h5>
+    </span>
+  </footer>
 </body>
 </html>
