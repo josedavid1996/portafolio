@@ -1,3 +1,4 @@
+/********* Custom Properties **************/
 :root {
   --bg-primary: #171718;
   --bg-primary-opacity: #17171865;
@@ -6,14 +7,18 @@
   --color-border: #3d3d3d;
   --color-padding: #1f1f21;
   --color-degradado: linear-gradient(270deg, #f9b53a 10.81%, #ff59a8 100%);
+  --max-width: 71.25rem;
+  --header-height: 4rem;
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
 }
-
+/**************** Reset **************/
 html {
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
   background-color: var(--bg-primary);
-  color: var(--color-white);
-  font-size: 16px;
+
+  font-size: 1rem;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -21,89 +26,229 @@ html {
 *::before {
   box-sizing: border-box;
 }
+
+a {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+}
 body {
   width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--color-white);
+  font-family: "DM Sans", sans-serif;
+}
+p {
+  line-height: 28px;
+  letter-spacing: 0.44px;
+}
+h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 71px;
+  letter-spacing: -0.5px;
+}
+h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 57px;
+}
+h3 {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.25px;
 }
 
-/* 1.Header */
-.header {
-  width: 100%;
-  max-width: 71.25rem;
-  margin: 0 auto;
-  background-color: var(--bg-primary-opacity);
-  height: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: -0.3rem;
+h4 {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
 }
-.header__logo {
-  width: 2.3rem;
-  height: 2.3rem;
-  cursor: pointer;
-}
-.navegation__list {
-  display: flex;
-}
-.navegation__list li {
-  list-style: none;
-}
-.navegation__list li a {
-  text-decoration: none;
+h5 {
   font-weight: 500;
-  line-height: 16px;
-  color: var(--color-white);
-  margin-right: 40px;
-}
-.navegation__list li:nth-child(1) a {
-  border-bottom: 2px solid var(--bg-button);
-}
-.header__contac {
-  background-color: var(--bg-button);
-  width: 10.5rem;
-  height: 2.5rem;
-  padding: 0.6rem 2.25rem;
-  border-radius: 0.7rem;
-}
-.header__contac:hover {
-  background-image: linear-gradient(270deg, #f9b53a 10.81%, #ff59a8 100%);
-}
-.header__contac a {
-  text-decoration: none;
-  color: var(--color-white);
-  font-weight: 500;
-  line-height: 16px;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
 }
 
-/* 2.HERO */
-.hero {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/************* Utilitis **/
+.btn {
+  background: #f9b53a;
+  border-radius: 8px;
+  width: 169px;
+  height: 48px;
+  padding: 1rem 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-white);
+  transition: transform 0.5s ease;
+  display: inline-block;
+}
+.btn:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 0.5s ease-out;
+}
+
+.efectos {
+  background: #c4c4c4;
+  backdrop-filter: blur(80px);
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+.none {
+  display: none;
+}
+
+/********* Components ***********/
+/********** HeroImagen **********/
+.hero___img {
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hero__img__opacity {
   width: 100%;
   min-height: 100vh;
-  background-image: url("../img/hero.jpg");
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+}
+.hero__img__title {
+  font-size: 6.5vw;
+  text-align: center;
+  font-weight: 700;
+  line-height: 6.5vw;
+}
+.hero__img__content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.hero__title {
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
-}
-.hero__text {
-  font-size: 2rem;
-  font-weight: 500;
-}
-.hero__photo {
-  width: 200px;
-  height: 200px;
-}
-.hero__photo img {
-  width: 100%;
-  height: 100%;
+.hero__img__photo {
+  width: 9.375rem;
+  height: 9.375rem;
   border-radius: 50%;
-  border: 2px solid var(--bg-button);
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 1014px) {
+  .hero__img__photo {
+    width: 15.625rem;
+    height: 15.625rem;
+  }
+}
+
+/********** Menu ***********/
+.menu {
+  width: 100%;
+  position: fixed;
+  bottom: var(--header-height);
+  background-color: var(--bg-primary-opacity);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s ease;
+}
+.menu a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: normal;
+  cursor: pointer;
+}
+.menu a:hover {
+  background-color: var(--bg-button);
+  transition: background-color 0.5s ease;
+}
+@media screen and (min-width: 1014px) {
+  .btn-menu {
+    display: none;
+  }
+  .menu {
+    position: static;
+    width: auto;
+    opacity: 1;
+    flex-direction: row;
+    pointer-events: auto;
+    margin: 0;
+  }
+  .menu a {
+    padding: 0 1rem;
+    transition: transform 1s;
+  }
+  .menu a:hover {
+    transform: translateY(-3px);
+    transition: transform 1s, background-color 0;
+    background-color: transparent;
+  }
+  .menu a:nth-child(1) {
+    border-bottom: 3px solid var(--bg-button);
+    padding-bottom: 3px;
+  }
+  .menu a:last-child {
+    padding-right: 0;
+  }
+}
+/*********Site styles *************/
+
+/* 1.Header */
+.header {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--bg-primary-opacity);
+}
+.header > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.logo img {
+  width: 2rem;
+  height: auto;
+  cursor: pointer;
+}
+.btn-menu ion-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.container > .btn {
+  display: none;
+}
+@media screen and (min-width: 1014px) {
+  .header {
+    top: 0;
+    position: sticky;
+  }
+  .container > .btn {
+    display: block;
+  }
 }
