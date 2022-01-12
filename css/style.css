@@ -4,7 +4,8 @@
   --bg-primary-opacity: #17171865;
   --bg-button: #f9b53a;
   --color-white: #fff;
-  --color-border: #3d3d3d;
+  --color-border: #857070;
+  --color-border-form: #a0a0a1;
   --color-padding: #1f1f21;
   --color-degradado: linear-gradient(270deg, #f9b53a 10.81%, #ff59a8 100%);
   --max-width: 71.25rem;
@@ -31,6 +32,7 @@ a {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1rem;
+  cursor: pointer;
 }
 body {
   width: 100%;
@@ -57,6 +59,7 @@ h2 {
   line-height: 57px;
 }
 h3 {
+  margin: 0;
   font-weight: 500;
   font-size: 34px;
   line-height: 40px;
@@ -64,14 +67,16 @@ h3 {
 }
 
 h4 {
+  margin: 0;
   font-weight: normal;
   font-size: 24px;
   line-height: 32px;
 }
 h5 {
+  margin: 0;
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.9rem;
   letter-spacing: 0.15px;
 }
 
@@ -81,6 +86,7 @@ img {
 }
 
 /************* Utilitis **/
+
 .btn {
   background: #f9b53a;
   border-radius: 8px;
@@ -93,25 +99,101 @@ img {
   transition: transform 0.5s ease;
   display: inline-block;
 }
+.btn-trans {
+  background: transparent;
+  border-radius: 8px;
+  width: 169px;
+  height: 48px;
+  padding: 0.5rem 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-white);
+  transition: transform 0.5s ease;
+  display: inline-block;
+  border: 1px solid var(--color-white);
+}
 .btn:hover {
   transform: scale(1.1, 1.1);
   transition: transform 0.5s ease-out;
 }
-
-.efectos {
-  background: #c4c4c4;
-  backdrop-filter: blur(80px);
+.color-bold {
+  color: var(--bg-button);
+}
+.icon {
+  font-size: 1.2rem;
+}
+.icon-lg {
+  font-size: 3.5rem;
+  cursor: pointer;
 }
 .container {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-width);
+  padding: 0 1rem;
+}
+.efectos {
+  box-shadow: -5px 14px 248px -61px rgba(249, 181, 58, 0.3);
+}
+textarea {
+  resize: none;
+}
+.section {
+  margin-bottom: 4rem;
+}
+.text-center {
+  text-align: center;
 }
 .none {
   display: none;
 }
 
 /********* Components ***********/
+/********* Card *************/
+.card {
+  width: 20.4rem;
+  height: 16.7rem;
+  background-color: var(--color-padding);
+  padding: 1rem;
+  margin: 0 auto 1rem;
+}
+.card__icon {
+  color: var(--bg-button);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 1014px) {
+  .abilities > article {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+  }
+  .card {
+    margin: 0 1rem;
+  }
+}
+/********** Formulario ********/
+form {
+  width: 20.5rem;
+  max-width: 27.9rem;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-padding);
+}
+.input-button {
+  width: 100%;
+}
+label > * {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-form);
+  background-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
 /********** HeroImagen **********/
 .hero___img {
   background-image: url("../img/hero.jpg");
@@ -144,6 +226,8 @@ img {
   height: 9.375rem;
   border-radius: 50%;
   margin-top: 1.5rem;
+  object-fit: cover;
+  object-position: center;
 }
 @media screen and (min-width: 1014px) {
   .hero__img__photo {
@@ -185,7 +269,7 @@ img {
   transition: background-color 0.5s ease;
 }
 @media screen and (min-width: 1014px) {
-  .btn-menu {
+  .menu__btn {
     display: none;
   }
   .menu {
@@ -195,6 +279,7 @@ img {
     flex-direction: row;
     pointer-events: auto;
     margin: 0;
+    padding-bottom: 0;
   }
   .menu a {
     padding: 0 1rem;
@@ -229,6 +314,7 @@ img {
   justify-content: space-between;
   padding: 1rem;
   border-top: 1px solid var(--color-border);
+  height: 100%;
 }
 
 .logo img {
@@ -236,19 +322,127 @@ img {
   height: auto;
   cursor: pointer;
 }
-.btn-menu ion-icon {
+.menu__btn ion-icon {
   font-size: 2rem;
   cursor: pointer;
 }
-.container > .btn {
+.container > .menu__contact {
   display: none;
+}
+
+.presentation {
+  width: 50%;
+  min-width: 22.5rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.presentation > article {
+  text-align: center;
+}
+
+article > h1 {
+  font-size: 2.125rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.25px;
+}
+.presentation__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.presentation__btn a:nth-child(1) {
+  margin-bottom: 1rem;
+}
+
+.about > article {
+  width: 100%;
+  min-width: 20.5rem;
+  padding: 0 1rem;
+}
+.about__img img {
+  width: 18.3rem;
+  height: 22.8rem;
+  object-fit: cover;
+  object-position: right;
+}
+.about__section {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--color-padding);
+  text-align: left;
+  min-width: 20.5rem;
+  max-width: 60.4rem;
+}
+.about__article {
+  margin-top: 2rem;
+}
+.portofolio__images > img {
+  margin-bottom: 2rem;
+}
+article > a {
+  display: block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 4rem;
+  letter-spacing: 0.15px;
+}
+.footer {
+  background-color: #131414;
+}
+.footer > h2 {
+  padding: 1rem 0;
+}
+.subtitle-uno {
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 1014px) {
   .header {
     top: 0;
     position: sticky;
   }
-  .container > .btn {
+  .container > .menu__contact {
     display: block;
+  }
+
+  article > h1 {
+    font-size: 3.75rem;
+    line-height: 4.43rem;
+    letter-spacing: -0.5px;
+  }
+  .presentation__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .presentation__btn a:nth-child(1) {
+    margin-right: 0.8rem;
+    margin-bottom: 0;
+  }
+  .about__section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  /* .about__img img {
+    width: 20.3rem;
+    height: 25.3rem;
+  } */
+  .about__article {
+    width: 35rem;
+  }
+  .footer > aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .subtitle-uno,
+  article > a {
+    font-weight: normal;
+    font-size: 1.2rem;
   }
 }

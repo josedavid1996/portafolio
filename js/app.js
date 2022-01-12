@@ -1,5 +1,5 @@
 ((d) => {
-  const $btnButton = d.querySelector(".btn-menu"),
+  const $btnButton = d.querySelector(".menu__btn"),
     $menu = d.querySelector(".menu");
 
   $btnButton.addEventListener("click", (e) => {
