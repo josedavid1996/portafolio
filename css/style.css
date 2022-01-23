@@ -9,7 +9,7 @@
   --color-padding: #1f1f21;
   --color-degradado: linear-gradient(270deg, #f9b53a 10.81%, #ff59a8 100%);
   --max-width: 71.25rem;
-  --header-height: 4rem;
+  --header-height: 5.25rem;
   --black-alpha-color: rgba(0, 0, 0, 0.5);
 }
 /**************** Reset **************/
@@ -91,14 +91,20 @@ img {
   background: #f9b53a;
   border-radius: 8px;
   width: 169px;
-  height: 48px;
-  padding: 1rem 20px;
+  height: 3rem;
+  padding: 1rem 1.25rem;
   text-align: center;
   text-decoration: none;
   color: var(--color-white);
   transition: transform 0.5s ease;
   display: inline-block;
+
+  /* transition: background-image 1s ease-in; */
 }
+
+/* .btn:hover {
+
+} */
 .btn-trans {
   background: transparent;
   border-radius: 8px;
@@ -109,13 +115,12 @@ img {
   text-decoration: none;
   color: var(--color-white);
   transition: transform 0.5s ease;
-  display: inline-block;
   border: 1px solid var(--color-white);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.btn:hover {
-  transform: scale(1.1, 1.1);
-  transition: transform 0.5s ease-out;
-}
+
 .color-bold {
   color: var(--bg-button);
 }
@@ -210,10 +215,10 @@ label > * {
   background-color: var(--black-alpha-color);
 }
 .hero__img__title {
-  font-size: 6.5vw;
+  font-size: clamp(2rem, 6.5vw, 5.25rem);
   text-align: center;
   font-weight: 700;
-  line-height: 6.5vw;
+  line-height: clamp(2rem, 6.5vw, 5.25rem);
 }
 .hero__img__content {
   display: flex;
@@ -258,15 +263,15 @@ label > * {
   transition: opacity 0.5s ease;
 }
 .menu a {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   color: var(--color-white);
   font-weight: normal;
   cursor: pointer;
+  transition: transform 0.5s ease-in;
 }
 .menu a:hover {
-  background-color: var(--bg-button);
-  transition: background-color 0.5s ease;
+  transform: translateY(-2px);
 }
 @media screen and (min-width: 1014px) {
   .menu__btn {
@@ -280,16 +285,13 @@ label > * {
     pointer-events: auto;
     margin: 0;
     padding-bottom: 0;
+    background-color: transparent;
   }
   .menu a {
     padding: 0 1rem;
     transition: transform 1s;
   }
-  .menu a:hover {
-    transform: translateY(-3px);
-    transition: transform 1s, background-color 0;
-    background-color: transparent;
-  }
+
   .menu a:nth-child(1) {
     border-bottom: 3px solid var(--bg-button);
     padding-bottom: 3px;
